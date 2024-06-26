@@ -43,7 +43,15 @@ c. the relevant practices implemented by Delegated Third Parties.
 
 **Certificate Management System**: A system used by a CA or Delegated Third Party to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
 
-**Certificate Systems**: The system used by a CA or Delegated Third Party in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI-related services.
+**Certificate Systems**: A system used by a CA or Delegated Third Party to access, process, or manage data or provide services related to:
+
+* certificate application;
+* certificate validation;
+* certificate approval;
+* signing;
+* certificate revocation;
+* serving authoritative certificate status information; or
+* key escrow.
 
 **Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/vuln-metrics/cvss>).
 
@@ -184,36 +192,71 @@ f. Monitor the archival and retention of logs to ensure that logs are retained f
 
 g. If continuous automated monitoring and alerting is utilized to satisfy sections 1.h. or 3.e. of these Requirements, respond to the alert and initiate a plan of action within at most twenty-four (24) hours.
 
-# 4. Vulnerability Management
-Certification Authorities MUST implement policies and procedures for identifying, evaluating, and resolving security vulnerabilities. 
+### 4. Vulnerability Management
 
-## 4.1 Inventory of Systems
+The CA MUST minimally implement the policies and procedures in this Section for identifying, evaluating, and resolving security vulnerabilities.
 
-Certification Authorities MUST define an inventory of systems that perform the following CA functions: certificate request, certificate validation, signing, certificate revocation, serving certificate status information, key escrow. Policies and procedures MUST apply to all systems in the inventory of systems.
+These policies and procedures MUST apply to all Certificate Systems.
 
-The policies and procedures SHOULD also apply to Systems which perform Audit Logging and Monitoring, IDPSes and Systems which perform/manage user or machine authentication.
+These policies and procedures SHOULD apply to Security Support Systems.
 
-## 4.2 Vulnerability management timeframe
+#### 4.1 Inventory of Certificate Systems
 
-Certification Authorities MUST establish a risk-based timeframe for responding and remediating critical and non-critical vulnerabilities.
+The CA MUST define an inventory of Certificate Systems.
 
-## 4.3 Intrusion Detection and Prevention
+#### 4.2 Vulnerability management timeframe
 
-Intrusion detection and prevention controls MUST protect the inventory of systems against common network and system threats.
+The CA MUST establish a timeframe for responding to and remediating critical and non-critical vulnerabilities.
+This timeframe MUST be established based on a risk assessment performed by the CA.
+The risk assessment MUST be based on a documented security analysis.
+The security analysis SHOULD take into account and address the following principles:
 
-## 4.4 Vulnerability Correction
+* criticality of assets;
+* maintaining confidentiality, integrity, and availability of assets;
+* risk tolerance;
+* regulatory requirements;
+* likelihood and impact of exploitation;
+* dependencies and interdependencies;
+* remediation resource requirements;
+* historical data; and
+* present threat landscape.
 
-A documented vulnerability correction process MUST be comprised of:  
-  1. periodic vulnerability scanning;
-  2. identification; 
-  3. review;
-  4. response; and 
-remediation  (i.e. vulnerabilities are tracked to ensure their remediation is completed within a defined timeframe)
+The CA MUST ensure critical and non-critical vulnerabilities are responded to and remediated in accordance with their established timeframe.
 
-## 4.5 Penetration Testing
+The CA MUST document in their Certificate Policy and/or Certification Practices Statement the timeframe established for responding to and remediating critical and non-critical vulnerabilities.
 
-A defined program for performing penetration tests MUST ensure that:
-  1. penetration tests are performed at least on an annual basis and after infrastructure or application changes that are organizationally defined as significant;
-  2. penetration tests are performed by a person or entity (or collective group thereof) with the necessary skills, tools, proficiency, code of ethics, and sufficient independence; and
-  3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in section 4.4.
+#### 4.3 Intrusion Detection and Prevention
 
+Intrusion detection and prevention controls MUST protect the inventory of Certificate Systems against common network and system threats.
+
+Some common network and system threats include, but are not limited to:
+
+* malicious software;
+* phishing and social engineering;
+* denial of service;
+* unauthorized access; and
+* malicious data injection.
+
+#### 4.4 Vulnerability Correction
+
+The CA MUST document and follow a vulnerability correction process.
+
+A documented vulnerability correction process MUST minimally be comprised of:  
+
+   1. periodic vulnerability scanning;
+   2. identification;
+   3. review;
+   4. response; and
+   5. remediation  (i.e. vulnerabilities are tracked to ensure their remediation is completed within a defined timeframe).
+
+#### 4.5 Penetration Testing
+
+The CA MUST define and follow a program for performing penetration tests.
+
+A defined program for performing penetration tests MUST minimally ensure that:
+
+   1. penetration tests are performed:
+      * at least on an annual basis; and
+      * after infrastructure or application changes that are organizationally defined as significant; and
+   2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
+   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.4](#44-vulnerability-correction).
